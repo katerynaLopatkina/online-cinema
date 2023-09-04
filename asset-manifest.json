@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/online-cinema/static/css/main.011ba214.css",
+    "main.js": "/online-cinema/static/js/main.142b94c6.js",
+    "static/media/bg.png": "/online-cinema/static/media/bg.563a1eb8348491f67f05.png",
+    "static/media/Misto.ttf": "/online-cinema/static/media/Misto.33c57b0e3df04c32d024.ttf",
+    "index.html": "/online-cinema/index.html",
+    "main.011ba214.css.map": "/online-cinema/static/css/main.011ba214.css.map",
+    "main.142b94c6.js.map": "/online-cinema/static/js/main.142b94c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.011ba214.css",
+    "static/js/main.142b94c6.js"
+  ]
+}
