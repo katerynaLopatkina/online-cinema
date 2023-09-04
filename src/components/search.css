@@ -1,0 +1,28 @@
+.search img{
+    width: 28px;
+    height: 28px;
+    margin-left: -50px;
+}
+
+.search input{
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 20px;
+    color: white;
+    outline: #083035;
+
+}
+
+.search input:focus {
+    background-color: #083035; 
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 80px;
+}

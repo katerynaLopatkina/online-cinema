@@ -1,0 +1,7 @@
+h2{
+    display: flex;
+    justify-content: center;
+    font-family: 'Misto';
+    font-size: 36px;
+    margin-bottom: 60px;
+}

@@ -1,0 +1,7 @@
+.type-year{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    padding-bottom: 30px;
+    font-size: 14px;
+}
