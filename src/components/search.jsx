@@ -1,40 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './search.css'
 import'./filter.css'
 
-class Search extends React.Component{
-    state={
-        search: '',
-        type:'all',
-    }
+const Search = ({searchMovies}) =>{
+    const [search,setSearch] = useState('');
+    const [type, setType] = useState('all');
 
-    handleKey =(event) =>{
+    const handleKey = (event) =>{
         if(event.key === 'Enter'){
-            this.props.searchMovies(this.state.search);
+            searchMovies(search);
         }
     }
 
-    handleFilter = (event) => {
-        this.setState(
-            () => ({ type: event.target.dataset.type }),
-            () => {
-                this.props.searchMovies(this.state.search, this.state.type);
-            }
-        );
+    const handleFilter = (event) => {
+        setType(event.target.dataset.type);
+        searchMovies(search, event.target.dataset.type);
     };
 
-    render(){
         return(
             <div>
                 <div className="search">
                     <input 
                         placeholder="Find your favorite movie..." 
                         type="search"
-                        value={this.state.search}
-                        onChange={ (event) =>  this.setState({ search: event.target.value }) }
-                        onKeyDown={this.handleKey}>
+                        value={search}
+                        onChange={ (event) =>  setSearch(event.target.value) }
+                        onKeyDown={handleKey}>
                     </input>
-                    <img src="../search.png"></img>
+                    
                 </div>
 
                 <div className='filter'>
@@ -43,8 +36,8 @@ class Search extends React.Component{
                         name="movie-type" 
                         id="filter-all" 
                         data-type='all' 
-                        checked={this.state.type === 'all'}
-                        onChange={this.handleFilter}>
+                        checked={type === 'all'}
+                        onChange={handleFilter}>
                     </input>
                     <label for="filter-all"> All</label>
 
@@ -53,8 +46,8 @@ class Search extends React.Component{
                         name="movie-type" 
                         id="filter-movies" 
                         data-type='movie' 
-                        checked={this.state.type === 'movie'}
-                        onChange={this.handleFilter}>
+                        checked={type === 'movie'}
+                        onChange={handleFilter}>
                     </input>
                     <label for="filter-movies"> Only movies</label>
 
@@ -63,14 +56,13 @@ class Search extends React.Component{
                         name="movie-type" 
                         id="filter-series" 
                         data-type='series' 
-                        checked={this.state.type === 'series'} 
-                        onChange={this.handleFilter}> 
+                        checked={type === 'series'} 
+                        onChange={handleFilter}> 
                     </input>
                     <label for="filter-series"> Only series</label>
                 </div>
             </div>
         );
-    } 
 }
 
 export default Search;
